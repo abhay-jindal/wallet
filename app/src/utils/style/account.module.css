@@ -1,0 +1,13 @@
+.AccountHeader h1{
+    color: #494949;
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 600;
+    letter-spacing: .009em; 
+}
+
+.InputText {
+    font-size: 14px;
+    color: #545454;
+    font-weight: 700
+}

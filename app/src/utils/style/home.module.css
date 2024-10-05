@@ -1,0 +1,24 @@
+.WelcomeHeader{
+   font-size: 2.4em; 
+   font-weight: 500;
+   font-style: normal;
+   margin-bottom: 0;
+   color: rgb(65, 64, 66);
+}
+
+.HomeButton {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.HomeButton a {
+    text-decoration: none;
+    color: #3287B7;
+    /* font-weight: 400; */
+    /* font-size: 0.875em; */
+    font-style: normal;
+
+}
