@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# 💳 e-Wallet – Modern Digital Wallet with Recharge, Transfers & Payment Gateway Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub repo size](https://img.shields.io/github/repo-size/abhay-jindal/wallet)
+![GitHub last commit](https://img.shields.io/github/last-commit/abhay-jindal/wallet)
+![GitHub stars](https://img.shields.io/github/stars/abhay-jindal/wallet?style=social)
+![License](https://img.shields.io/github/license/abhay-jindal/wallet)
 
-## Available Scripts
+**e-Wallet** is a full-featured digital wallet application built using **React**, **Material-UI**, and powered by **Razorpay**, **PayPal**, and **Brevo (Sendinblue)**. It enables **wallet recharges**, **P2P money transfers (just like PayPal)**, email notifications, and a responsive, Apple-inspired interface.
 
-In the project directory, you can run:
+> 🚀 Ideal for developers or businesses wanting to build secure, scalable fintech apps with modern UX.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+- 🔐 **Secure Authentication** – With reCAPTCHA & validations
+- 💸 **Recharge Wallet** – Using Razorpay or PayPal
+- 👥 **Send Money to Users** – Peer-to-peer transfers like PayPal
+- 🧾 **Transaction History** – Filterable, real-time logs
+- 📬 **Email Alerts** – Via Brevo (Sendinblue)
+- 📱 **Responsive UI** – Apple-style design (SF Pro font)
+- ⚙️ **Admin Panel** – Manage users & wallet operations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🔧 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer         | Tech                                      |
+|---------------|-------------------------------------------|
+| **Frontend**  | React, Material-UI, React Router DOM       |
+| **Validation**| Yup                                        |
+| **State Mgmt**| Context API                               |
+| **Auth**      | Google reCAPTCHA                          |
+| **Email**     | Brevo (Sendinblue)                        |
+| **Payments**  | Razorpay, PayPal SDK                      |
+| **P2P Logic** | Custom internal API                       |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Environment Setup
 
-### `npm run eject`
+Set up all the environment vars in your system:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```env
+RECAPTCHA_SECRET_KEY=your_recaptcha_secret_key
+RAZORPAY_KEY_ID=your_razorpay_key
+RAZORPAY_KEY_ID_SECRET=your_razorpay_key_secret
+MONGODB_URI=your_mongo_uri
+BREVO_API_KEY=your_brevo_api_key
+JWT_SECRET=jwt_secret
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📥 Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/abhay-jindal/wallet.git
+cd wallet
+npm install
+npm run build
+npm start
+```
 
-## Learn More
+Runs on: `http://localhost:8080`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
+## 💼 Wallet Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This e-Wallet application offers a seamless, secure, and global-ready experience with the following capabilities:
 
-### Code Splitting
+- 💳 **Recharge Your Wallet**
+  - ✅ **Razorpay**: Supports UPI, Cards, Netbanking, Wallets — ideal for Indian users with fast, secure payments.
+  - 🌍 **PayPal**: Global support — perfect for international users.
+  - 🔄 On successful recharge:
+    - Wallet balance updates instantly
+    - Transaction is securely logged
+    - Confirmation email is sent via **Brevo**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 🔁 **Send Money (P2P Transfers like PayPal)**
+  - Instantly transfer funds to any other registered user
+  - Just enter recipient’s email and amount
+  - Wallet balance is updated in real-time for both sender and recipient
+  - Both users receive email receipts
+  - No third-party gateway fees — direct wallet-to-wallet
+  - Email-based confirmations ensure transparency and traceability
 
-### Analyzing the Bundle Size
+- 📬 **Email Notifications (via Brevo)**
+  - 📨 Welcome emails on registration
+  - 💰 Recharge confirmation emails
+  - 🔄 Transfer receipts for P2P payments
+  - 🔐 Secure password reset links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+All key transactions are instantly recorded and communicated — creating a transparent and trustable digital wallet environment.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📡 API Endpoints
 
-### Advanced Configuration
+| **Method** | **Endpoint**         | **Description**                             |
+|------------|----------------------|---------------------------------------------|
+| POST       | `/api/login`         | Login with email + CAPTCHA                 |
+| POST       | `/api/register`      | Register new user                          |
+| POST       | `/api/recharge`      | Recharge the wallet                        |
+| POST       | `/api/send-money`    | Send money to another user                 |
+| GET        | `/api/transactions`  | View transaction history                   |
+| GET        | `/api/balance`       | Fetch wallet balance                       |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 👨‍💻 Author
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Abhay Jindal**
+- 📧 Email: [jindal1808@gmail.com](mailto:jindal1808@gmail.com)
+- 🌐 GitHub: [@abhay-jindal](https://github.com/abhay-jindal)
