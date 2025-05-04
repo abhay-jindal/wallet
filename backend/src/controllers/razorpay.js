@@ -6,8 +6,8 @@ const RazorpayOrder = require('../models/razorpayOrder')
 const Card = require('../models/card')
 
 const razorpay = new Razorpay({
-	key_id: 'rzp_test_0DqsVb6cb8KC42',
-	key_secret: 'vF673B83IfEdp4UzNkcpp7Se'
+	key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET
 })
 
 exports.order = async (req, res, next) => {

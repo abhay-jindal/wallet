@@ -83,7 +83,7 @@ customerSchema.methods.generateAuthToken = async function () {
     const customer = this
     const token = jwt.sign(
         { _id: customer._id.toString(), name: `${customer.first_name} ${customer.last_name}` }, 
-        'abhayjj', 
+        process.env.JWT_SECRET, 
         { expiresIn: '1h' }
     )
 

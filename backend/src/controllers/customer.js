@@ -2,7 +2,7 @@ const Customer = require('../models/customer');
 const { InvokeCustomError } = require('../errors/InvokeCustomError');
 const { default: axios } = require('axios');
 
-SECRET_KEY = '6LeZuXEpAAAAAFsJdtc3Qh3_JVDv7k8orAZDUVur'
+SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY
 
 exports.addCustomer = async (req, res, next) => {
     try {
